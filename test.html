@@ -21,6 +21,14 @@
         }
     }%>
 </script>
+<script id='template' type='javascript/template'>
+    <ul>
+        <% for(var i in obj){ %>
+            <li class="<%= obj[i].status %>"><%= obj[i].text %></li>
+        <% } %>
+    </ul>
+</script>
+
 <textarea class="my-tpl-destination"></textarea>
 <script>
 
