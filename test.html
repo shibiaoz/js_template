@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js template</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="./js_template.js"></script>
+</head>
+<body>
+<script type="text/html" id="my-tpl">
+    <% for (var i = 0; i <this.list.length; i++) {
+        var user = this.list[i];
+        if (user.age < 10) {
+            %>
+            <span><%user.name%></span>
+            <%
+        }else {
+            %>
+            <span><%user.name%></span>
+            <%
+        }
+    }%>
+</script>
+<textarea class="my-tpl-destination"></textarea>
+<script>
+
+var data = {
+    list:[
+        {name: 3, age: 3},
+        {name: 4, age: 4},
+        {name: 5, age: 5},
+        {name: 6, age: 6}
+    ]
+};
+var tpl;
+$(function  () {
+    tpl = '<% for(var i = 0; i < this.posts.length; i++) {' +　
+        'var post = this.posts[i]; %>' +
+        '<% if(!post.expert){ %>' +
+            '<span>post is null</span>' +
+        '<% } else { %>' +
+            '<a href="#"><% post.expert %> at <% post.time %></a>' +
+        '<% } %>' +
+    '<% } %>';
+
+    tpl = $('#my-tpl').text();
+    console.log(tpl);
+    var templateHtml = myTplEng(tpl, data);
+    $('.my-tpl-destination').html(templateHtml);
+});
+</script>
+</body>
+</html>
