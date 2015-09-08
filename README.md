@@ -54,3 +54,7 @@ var r =[];
 
 
 ```
+
+> 参考文章
+- [小胡子的模板引擎](http://segmentfault.com/a/1190000000426283)
+- [javascript模板引擎和实现原理](http://segmentfault.com/a/1190000000432600)
